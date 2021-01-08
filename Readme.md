@@ -1,6 +1,6 @@
 # Description 
 
-This repo is Yifei Deng's Master Research Paper (MRP) in partial fulfilment of the requirement for Master of Quantitative Finance (MQF) in University of Waterloo, which is supverised by Professor Christiane Lemieux in Department of Statistics and Acturial Science Department in University of Waterloo. The repo includes the replication work for Paper "Unbiased Monte Carlo valuation of lookback, swing and barrier options with continuous monitoring under variance gamma models" by Martin Becker in 2010. Moreover, it includes Yifei Deng's Own work on applying the randomized Quasi-Monte-Carlo simulation on the Adpative DGBS framework with some numerical experiments. For detailed report, one can contact Yifei Deng throgh email yifeideng@alumni.psu.edu.
+This repo contains the code for Yifei Deng's Master Research Paper (MRP) in partial fulfilment of the requirement for Master of Quantitative Finance (MQF) in University of Waterloo, which is supverised by Professor Christiane Lemieux in Department of Statistics and Acturial Science Department in University of Waterloo. The repo includes the replication work for Paper "Unbiased Monte Carlo valuation of lookback, swing and barrier options with continuous monitoring under variance gamma models" by Martin Becker in 2010. Moreover, it includes Yifei Deng's Own work on applying the randomized Quasi-Monte-Carlo simulation on the Adpative DGBS framework with some numerical experiments. For detailed report, one can contact Yifei Deng throgh email yifeideng@alumni.psu.edu.
 
 # References
 
