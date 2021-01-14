@@ -22,7 +22,7 @@ for i = 1:size(M,2)
     [V_rQMC(i),se_rQMC(i)] = Lookback_Option_ADGBS_RQMC(M(i), run_rqmc, sobol_num, epsilon);
 end
 
-% Gives the plot
+% Gives the plot(MC)
 figure(1)
 plot(M, V, 'b-')
 xlim([min(M)-0.1, max(M)+0.1])
@@ -30,9 +30,43 @@ xlabel('Depth(m)')
 ylabel('Estimated Price')
 title('Monte-Carlo Method')
 
+% log-log scale
 figure(2)
+plot(log(M), log(V), 'b-')
+xlim([min(M)-0.1, max(M)+0.1])
+xlabel('log(Depth(m))')
+ylabel('log(Estimated Price)')
+title('Monte-Carlo Method (log-log scale)')
+axis auto
+
+% Gives the plot(rQMC)
+figure(3)
 plot(M, V_rQMC, 'r-')
 xlim([min(M)-0.1, max(M)+0.1])
 xlabel('Depth(m)')
 ylabel('Estimated Price')
 title('Randomized Quasi-Monte-Carlo Method')
+
+% log-log scale
+figure(4)
+plot(log(M), log(V_rQMC), 'r-')
+xlim([min(M)-0.1, max(M)+0.1])
+xlabel('log(Depth(m))')
+ylabel('log(Estimated Price)')
+title('Randomized Quasi-Monte-Carlo Method (log-log scale)')
+axis auto
+
+% Conbined the plot
+coef_MC = polyfit(log(M), log(V)',1);
+coef_rQMC = polyfit(log(M), log(V_rQMC)',1);
+hold on
+plot(log(M), log(V), 'b-')
+plot(log(M), log(M)*coef_MC(1)+coef_MC(2), 'b--')
+plot(log(M), log(V_rQMC), 'r-')
+plot(log(M), log(M)*coef_rQMC(1)+coef_rQMC(2), 'r--')
+hold off
+xlabel('log(Depth(m))')
+ylabel('log(Estimated Price)')
+title('MC and rQMC (log-log scale)')
+axis auto
+legend('MC','Linear Fit for MC: y = -0.0352x+2.3045','rQMC','Linear Fit for rQMC: y = -0.0220x+2.2826','FontSize',13)
